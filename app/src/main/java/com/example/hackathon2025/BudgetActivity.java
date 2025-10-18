@@ -22,5 +22,7 @@ public class BudgetActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        user = (UserItem) getIntent().getSerializableExtra("USER_DATA");
+
     }
 }

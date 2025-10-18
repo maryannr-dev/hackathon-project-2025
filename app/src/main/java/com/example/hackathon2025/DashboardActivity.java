@@ -2,6 +2,7 @@ package com.example.hackathon2025;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class DashboardActivity extends AppCompatActivity {
@@ -51,6 +53,7 @@ public class DashboardActivity extends AppCompatActivity {
             Intent intent;
             if(item.getItemId() == R.id.budgetNav){
                 intent = new Intent(DashboardActivity.this, BudgetActivity.class);
+                intent.putExtra("USER_DATA", (Serializable) user);
                 startActivity(intent);
                 return true;
             }
