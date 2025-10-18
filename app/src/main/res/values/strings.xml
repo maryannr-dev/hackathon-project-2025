@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Hackathon2025</string>
+    <string name="onboarding_image" />
 </resources>
