@@ -3,6 +3,9 @@
     <style name="Base.Theme.Hackathon2025" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/deepPurple</item>
+        <item name="colorSecondary">@color/lightPurple</item>
+        <item name="android:fontFamily">@font/nunito_sans</item>
     </style>
 
     <style name="Theme.Hackathon2025" parent="Base.Theme.Hackathon2025" />
