@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    tools:context=".BudgetActivity">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:title="Welcome User!"
+            app:title="Budget"
             app:titleTextColor="@color/almostWhite" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -56,7 +56,7 @@
                     android:id="@+id/textViewCategoriesHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Budget Overview"
+                    android:text="Category Limits Summary"
                     android:textColor="@color/deepPurple"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -65,7 +65,7 @@
                     android:id="@+id/textViewHousing"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Amount of Total Budget Spent This Week" />
+                    android:text="Housing" />
 
                 <com.google.android.material.progressindicator.LinearProgressIndicator
                     android:id="@+id/housingProgress"
@@ -79,10 +79,10 @@
                     app:trackColor="#BEBBC2" />
 
                 <TextView
-                    android:id="@+id/textViewDesc2"
+                    android:id="@+id/textViewTransport"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Amount of Non-Essential Budget Spent" />
+                    android:text="Transportation" />
 
                 <com.google.android.material.progressindicator.LinearProgressIndicator
                     android:id="@+id/transportationProgress"
@@ -96,12 +96,80 @@
                     app:trackColor="#BEBBC2" />
 
                 <TextView
-                    android:id="@+id/textViewAmountSpent"
+                    android:id="@+id/textViewFood"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="You've spent $X this week"
-                    android:textAlignment="center"
-                    android:textSize="12sp" />
+                    android:text="Food" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/foodProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:progress="0"
+                    android:progressTint="@color/deepPurple"
+                    app:indicatorColor="@color/deepPurple"
+                    app:progressCompat="0"
+                    app:trackColor="#BEBBC2" />
+
+                <TextView
+                    android:id="@+id/textViewMedical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Medical" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/medicalProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:progress="0"
+                    android:progressTint="@color/deepPurple"
+                    app:indicatorColor="@color/deepPurple"
+                    app:progressCompat="0"
+                    app:trackColor="#BEBBC2" />
+
+                <TextView
+                    android:id="@+id/textViewPersonal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Personal Spending" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/personalProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:progress="0"
+                    android:progressTint="@color/deepPurple"
+                    app:indicatorColor="@color/deepPurple"
+                    app:progressCompat="0"
+                    app:trackColor="#BEBBC2" />
+
+                <TextView
+                    android:id="@+id/textViewEntertainment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Entertainment and Social" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/entertainmentProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:progress="0"
+                    android:progressTint="@color/deepPurple"
+                    app:indicatorColor="@color/deepPurple"
+                    app:progressCompat="0"
+                    app:trackColor="#BEBBC2" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/editLimitsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Category Limits"
+                    android:textStyle="bold" />
+
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -119,59 +187,29 @@
             <!-- Content of the card goes here -->
 
             <LinearLayout
-                android:id="@+id/topCategoriesLayout"
+                android:id="@+id/transactionLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textViewTopCategoriesHeader"
-                    android:layout_width="match_parent"
+                    android:id="@+id/textViewTransactionHeader"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Top Spending Categories"
+                    android:text="Recent Transactions"
+                    android:textAlignment="center"
                     android:textColor="@color/deepPurple"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textViewSpending1"
+                <ListView
+                    android:id="@+id/transactionListView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Spending Category 1" />
-
-                <com.google.android.material.progressindicator.LinearProgressIndicator
-                    android:id="@+id/weeklyCategoryProgress1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:indeterminate="false"
-                    android:progress="0"
-                    android:progressTint="@color/deepPurple"
-                    app:indicatorColor="@color/deepPurple"
-                    app:progressCompat="0"
-                    app:trackColor="#BEBBC2" />
-
-                <TextView
-                    android:id="@+id/textViewSpending2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Spending Category 2" />
-
-                <com.google.android.material.progressindicator.LinearProgressIndicator
-                    android:id="@+id/weeklyCategoryProgress2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:indeterminate="false"
-                    android:progress="0"
-                    android:progressTint="@color/deepPurple"
-                    app:indicatorColor="@color/deepPurple"
-                    app:progressCompat="0"
-                    app:trackColor="#BEBBC2" />
+                    android:layout_height="match_parent" />
             </LinearLayout>
+
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="0dp"
@@ -186,8 +224,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_dashboard_navigation_menu" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/transactionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="Add Transaction"
+        android:src="@drawable/add_icon"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
