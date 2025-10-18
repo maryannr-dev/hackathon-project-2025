@@ -1,10 +1,19 @@
-public class Badges {
-    private int experiencePoints;
-    private int Level;
+package com.example.hackathon2025.models;
 
-    public Badges(int xp, int lvl) {
+import android.graphics.drawable.Drawable;
+
+public class Badges {
+
+    private String badgeName;
+    private int badgeIconId;
+    private int experiencePoints;
+    private int level;
+
+    public Badges(String badgeName, int badgeIconId, int xp, int lvl) {
+        this.badgeName = badgeName;
+     this.badgeIconId = badgeIconId;
      experiencePoints = xp;
-     Level = lvl;
+     level = lvl;
     }
 
     //Getter and setter
@@ -13,10 +22,18 @@ public class Badges {
     }
 
     public int getLvl() {
-        return this.Level;
+        return this.level;
     }
 
-    public void addxp(int amount)  {
+    public int getBadgeIconId(){
+        return this.badgeIconId;
+    }
+
+    public String getBadgeName(){
+        return this.badgeName;
+    }
+
+    public void addXp(int amount)  {
         this.experiencePoints = this.experiencePoints + amount; 
     }
   

@@ -8,8 +8,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class BudgetActivity extends AppCompatActivity {
+import com.example.hackathon2025.models.UserItem;
 
+public class BudgetActivity extends AppCompatActivity {
+    UserItem user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

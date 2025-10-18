@@ -1,25 +1,47 @@
 package com.example.hackathon2025.models;
 
+import com.example.hackathon2025.R;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class UserItem {
-    private String legalName;
+    private String email;
     private String password;
     private Date dateOfBirth;
 
+    private Budget budget;
+    private List<Badges> badgesList;
+
+
     public UserItem(String lM, String p, Date dOB) {
-        legalName = lM;
+        email = lM;
         password = p;
         dateOfBirth = dOB;
+        budget = new Budget();
+        budget.setDefaultCategories();
+        badgesList = new ArrayList<>();
+        badgesList.add(new Badges("Budget Warrior", R.drawable.budget_warrior, 0, 0));
+        badgesList.add(new Badges("Literacy Scholar", R.drawable.literacy_icon,0,0));
+
+    }
+
+    public Budget getBudget() {
+        return budget;
+    }
+
+    public List<Badges> getBadgesList(){
+        return badgesList;
     }
 
     //getters and setters
-    public String getLegalName() {
-        return legalName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLegalName(String newLegalName) {
-        this.legalName = newLegalName;
+    public void setEmail(String newLegalName) {
+        this.email = newLegalName;
     }
 
     public String getPassword() {

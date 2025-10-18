@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 public class BudgetLimitCategory implements Serializable {
     private final String categoryName;
-    private double limitAmount;
-    private double amountSpent;
+    private int limitAmount;
+    private int amountSpent;
     private boolean isWant;
 
-    public BudgetLimitCategory(String name, double limit, double spent, boolean isWant) {
+    public BudgetLimitCategory(String name, int limit, int spent, boolean isWant) {
         this.categoryName = name;
         this.limitAmount = limit;
         this.amountSpent = spent;
@@ -30,11 +30,11 @@ public class BudgetLimitCategory implements Serializable {
         return isWant;
     }
 
-    public void setLimitAmount(double limitAmount) {
+    public void setLimitAmount(int limitAmount) {
         this.limitAmount = limitAmount;
     }
 
-    public void addToAmountSpent(double amountSpent) {
+    public void addToAmountSpent(int amountSpent) {
         this.amountSpent += amountSpent;
     }
 }
