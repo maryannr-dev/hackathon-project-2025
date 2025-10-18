@@ -3,39 +3,61 @@ package com.example.hackathon2025.models;
 import android.graphics.drawable.Drawable;
 
 public class Badges {
-
+    private int xp;
+    private int lvl;
     private String badgeName;
     private int badgeIconId;
-    private int experiencePoints;
-    private int level;
 
     public Badges(String badgeName, int badgeIconId, int xp, int lvl) {
-        this.badgeName = badgeName;
+     this.xp = xp;
+     this.lvl = lvl;
+     this.badgeName = badgeName;
      this.badgeIconId = badgeIconId;
-     experiencePoints = xp;
-     level = lvl;
     }
 
     //Getter and setter
     public int getXp() {
-        return this.experiencePoints;
+        return this.xp;
     }
 
     public int getLvl() {
-        return this.level;
+        return this.lvl;
     }
 
-    public int getBadgeIconId(){
-        return this.badgeIconId;
-    }
-
-    public String getBadgeName(){
+    public String getBadgeName() {
         return this.badgeName;
     }
 
-    public void addXp(int amount)  {
-        this.experiencePoints = this.experiencePoints + amount; 
+    public String getBadgeIconId() {
+        return this.badgeIconId;
     }
-  
+
+    public void addxp(int amount)  {
+        this.xp = this.xp + amount; 
+    }
+
+    public void setXp(int xp) {
+        this.xp = xp;
+    }
+
+    public void setLvl(int lvl) {
+        this.lvl = lvl;
+    }
+
+    public void setBadgeName(String badgeName) {
+        this.badgeName = badgeName;
+    }
+
+    public void setBadgeIconId(String badgeIconId) {
+        this.badgeIconId = badgeIconId;
+    }
+
+    public void printBadge() {
+        System.out.println("Badge level: " + lvl);
+        System.out.println("Badge xp: " + xp);
+        System.out.println("Badge name: " + badgeName);
+        System.out.println("Badge Icon ID: " + badgeIconId);
+    }
+    
     
 }
