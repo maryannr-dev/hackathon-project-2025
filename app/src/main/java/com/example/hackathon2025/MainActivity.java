@@ -42,12 +42,10 @@ public class MainActivity extends AppCompatActivity {
         new TabLayoutMediator(tabIndicator, onboardingViewPager, (tab, position) -> {}).attach();
         MaterialButton btnNext = findViewById(R.id.btnNext);
         btnNext.setOnClickListener(v -> {
-            if (onboardingViewPager.getCurrentItem() + 1 < items.size()) {
-                onboardingViewPager.setCurrentItem(onboardingViewPager.getCurrentItem() + 1);
-            } else {
-                Intent intent = new Intent(MainActivity.this,LoginSelectionActivity.class);
-                startActivity(intent);
-            }
+
+            Intent intent = new Intent(MainActivity.this,LoginSelectionActivity.class);
+            startActivity(intent);
+
         });
     }
 }

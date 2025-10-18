@@ -33,12 +33,14 @@ public class LoginSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginSelectionActivity.this, CreateAccountActivity.class);
+                startActivity(intent);
             }
         });
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginSelectionActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 
