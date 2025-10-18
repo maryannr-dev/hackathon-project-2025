@@ -1,5 +1,6 @@
 package com.example.hackathon2025;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -44,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
             if (onboardingViewPager.getCurrentItem() + 1 < items.size()) {
                 onboardingViewPager.setCurrentItem(onboardingViewPager.getCurrentItem() + 1);
             } else {
-
+                Intent intent = new Intent(MainActivity.this,LoginSelectionActivity.class);
+                startActivity(intent);
             }
         });
     }
