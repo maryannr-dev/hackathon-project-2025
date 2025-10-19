@@ -1,6 +1,7 @@
 package com.example.hackathon2025.models;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Transaction implements Serializable {
@@ -10,7 +11,7 @@ public class Transaction implements Serializable {
     private String description;
     private boolean isIncome;
 
-    public Transaction(BudgetLimitCategory category, double amount, Date date, String description, boolean isIncome){
+    public Transaction(BudgetLimitCategory category, double amount, LocalDate date, String description, boolean isIncome){
         this.category = category;
         this.amount = amount;
         this.date = date;

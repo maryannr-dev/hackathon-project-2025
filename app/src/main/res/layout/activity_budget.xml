@@ -53,7 +53,7 @@
                 android:padding="16dp">
 
                 <TextView
-                    android:id="@+id/textViewCategoriesHeader"
+                    android:id="@+id/textViewBadge1Header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Category Limits Summary"

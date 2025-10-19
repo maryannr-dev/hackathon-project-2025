@@ -1,3 +1,5 @@
+package com.example.hackathon2025.models;
+
 public class Articles {
     private String title;
     private String url;

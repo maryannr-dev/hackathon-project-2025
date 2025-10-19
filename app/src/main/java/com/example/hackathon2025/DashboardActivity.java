@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,9 +59,7 @@ public class DashboardActivity extends AppCompatActivity {
                 return true;
             }
             else if(item.getItemId() == R.id.learnNav){
-                intent = new Intent(DashboardActivity.this,LearnActivity.class);
-                intent.putExtra("USER_DATA", (Serializable) user);
-                startActivity(intent);
+                Toast.makeText(DashboardActivity.this,"Under Construction",Toast.LENGTH_SHORT).show();
                 return true;
             }
             else if(item.getItemId() == R.id.profile){
