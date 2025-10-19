@@ -9,7 +9,7 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputAmount"
-        android:layout_width="0dp"
+        android:layout_width=""
         android:layout_height="wrap_content"
         android:hint="Enter Expense Amount"
         android:inputType="number"
@@ -71,10 +71,10 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputDesc"
-        android:layout_width="0dp"
+        android:layout_width=""
         android:layout_height="wrap_content"
         android:hint="Enter Description"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
