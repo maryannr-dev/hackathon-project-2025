@@ -7,7 +7,7 @@ import java.util.Date;
 public class Transaction implements Serializable {
     private BudgetLimitCategory category;
     private double amount;
-    private Date date;
+    private LocalDate date;
     private String description;
     private boolean isIncome;
 
@@ -27,7 +27,7 @@ public class Transaction implements Serializable {
         return amount;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 

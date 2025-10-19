@@ -186,7 +186,7 @@ public class BudgetActivity extends AppCompatActivity {
         });
     }
 
-    class TransactionAdapter extends ArrayAdapter<Transaction> {
+    static class TransactionAdapter extends ArrayAdapter<Transaction> {
         private final List<Transaction> transactions;
 
         public TransactionAdapter(@NonNull Context context, int resource, @NonNull List<Transaction> objects) {

@@ -45,4 +45,5 @@ dependencies {
     implementation(libs.viewpager2)
     implementation("androidx.security:security-crypto:1.1.0")
     implementation("com.google.code.gson:gson:2.13.2")
+    implementation(libs.material)
 }

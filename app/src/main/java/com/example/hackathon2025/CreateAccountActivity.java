@@ -92,9 +92,9 @@ public class CreateAccountActivity extends AppCompatActivity {
             String salt = hashedPasswordAndSalt[1];
 
             Budget startingBudget = new Budget();
-            startingBudget.setDefaultCategories();
-            List<Badges> userBadges = new ArrayList<>();
-            UserItem userToPass = new UserItem(email, hashedPassword, salt, new Date(selectedDateInMillis), startingBudget, userBadges);
+
+
+            UserItem userToPass = new UserItem(email, hashedPassword, salt, new Date(selectedDateInMillis), startingBudget);
 
             try {
                 Gson gson = new Gson();

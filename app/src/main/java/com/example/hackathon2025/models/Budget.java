@@ -11,6 +11,12 @@ public class Budget implements Serializable {
     public Budget(){
         categoryList = new ArrayList<>();
         transactionList = new ArrayList<>();
+        categoryList.add(new BudgetLimitCategory("Housing", 1000, 0, false));
+        categoryList.add(new BudgetLimitCategory("Transportation", 500, 0, false));
+        categoryList.add(new BudgetLimitCategory("Food", 200, 0, false));
+        categoryList.add(new BudgetLimitCategory("Medical", 100, 0, false));
+        categoryList.add(new BudgetLimitCategory("Personal Spending", 100, 0, true));
+        categoryList.add(new BudgetLimitCategory("Entertainment", 200, 0, true));
     }
 
     public List<Transaction> getTransactionList() {
@@ -30,14 +36,7 @@ public class Budget implements Serializable {
         return null;
     }
 
-    public void setDefaultCategories(){
-        categoryList.add(new BudgetLimitCategory("Housing", 1000, 0, false));
-        categoryList.add(new BudgetLimitCategory("Transportation", 500, 0, false));
-        categoryList.add(new BudgetLimitCategory("Food", 200, 0, false));
-        categoryList.add(new BudgetLimitCategory("Medical", 100, 0, false));
-        categoryList.add(new BudgetLimitCategory("Personal Spending", 100, 0, true));
-        categoryList.add(new BudgetLimitCategory("Entertainment", 200, 0, true));
-    }
+
 
     public int getTotalBudget(){
         int total = 0;
