@@ -15,6 +15,7 @@ public class BudgetLimitCategory implements Serializable {
         this.isWant = isWant;
     }
 
+    // Getters and setters
     public String getCategoryName() {
         return categoryName;
     }
@@ -26,7 +27,8 @@ public class BudgetLimitCategory implements Serializable {
     public double getAmountSpent() {
         return amountSpent;
     }
-    public boolean isWant(){
+
+    public boolean isWant() {
         return isWant;
     }
 

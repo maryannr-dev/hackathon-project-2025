@@ -7,6 +7,7 @@ import java.util.List;
 public class Budget implements Serializable {
     List<BudgetLimitCategory> categoryList;
     List<Transaction> transactionList;
+
     public Budget(){
         categoryList = new ArrayList<>();
         transactionList = new ArrayList<>();
@@ -76,6 +77,5 @@ public class Budget implements Serializable {
             }
         }
         return total;
-        }
     }
-
+}

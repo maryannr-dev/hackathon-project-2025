@@ -2,7 +2,9 @@ package com.example.hackathon2025.models;
 
 import android.graphics.drawable.Drawable;
 
-public class Badges {
+import java.io.Serializable;
+
+public class Badges implements Serializable {
     private int xp;
     private int lvl;
     private String badgeName;
@@ -28,7 +30,7 @@ public class Badges {
         return this.badgeName;
     }
 
-    public String getBadgeIconId() {
+    public int getBadgeIconId() {
         return this.badgeIconId;
     }
 
@@ -48,7 +50,7 @@ public class Badges {
         this.badgeName = badgeName;
     }
 
-    public void setBadgeIconId(String badgeIconId) {
+    public void setBadgeIconId(int badgeIconId) {
         this.badgeIconId = badgeIconId;
     }
 

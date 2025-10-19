@@ -59,13 +59,11 @@ public class DashboardActivity extends AppCompatActivity {
             }
             else if(item.getItemId() == R.id.learnNav){
                 intent = new Intent(DashboardActivity.this,LearnActivity.class);
-                intent.putExtra("USER_DATA", (Serializable) user);
                 startActivity(intent);
                 return true;
             }
             else if(item.getItemId() == R.id.profile){
                 intent = new Intent(DashboardActivity.this,ProfileActivity.class);
-                intent.putExtra("USER_DATA", (Serializable) user);
                 startActivity(intent);
                 return true;
 
