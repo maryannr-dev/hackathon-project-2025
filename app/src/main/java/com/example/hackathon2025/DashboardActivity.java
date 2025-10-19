@@ -76,6 +76,7 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent = getIntent();
         user = (UserItem) intent.getSerializableExtra("USER_DATA");
 
+
         weeklyTotalProgress = findViewById(R.id.housingProgress);
         weeklyWantsProgress = findViewById(R.id.transportationProgress);
         weeklyCategoryProgress1 = findViewById(R.id.weeklyCategoryProgress1);
@@ -113,11 +114,7 @@ public class DashboardActivity extends AppCompatActivity {
         amountSpent.setText("You've spent $" + user.getBudget().getTotalSpent() + " overall");
 
 
-
-
-
-
-
-
     }
+
+
 }

@@ -1,21 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/textInputLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:padding="24dp">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputAmount"
-        android:layout_width=""
+    <TextView
+        android:id="@+id/textViewDialogTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter Expense Amount"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Add New Transaction"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDialogTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Amount ($)"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutDescription"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutAmount">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description (e.g., Coffee)" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textViewCategoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Category"
+        android:labelFor="@+id/categorySelections"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutDescription"/>
 
     <RadioGroup
         android:id="@+id/categorySelections"
@@ -24,65 +67,34 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputAmount">
+        app:layout_constraintTop_toBottomOf="@+id/textViewCategoryLabel">
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/housingRadioBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Housing" />
+        <RadioButton android:id="@+id/housingRadioBtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Housing"/>
+        <RadioButton android:id="@+id/transportationRadioBtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Transportation"/>
+        <RadioButton android:id="@+id/foodRadioBtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Food"/>
+        <RadioButton android:id="@+id/medicalRadioBtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Medical"/>
+        <RadioButton android:id="@+id/personalRadioBtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Personal Spending"/>
+        <RadioButton android:id="@+id/entertainmentRadioBtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Entertainment"/>
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/transportationRadioBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Transportation" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/foodRadioBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Food" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/medicalRadioBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Medical" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/personalRadioBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Personal Spending" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/entertainmentRadioBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Entertainment" />
     </RadioGroup>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputDesc"
-        android:layout_width=""
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter Description"
-        android:inputType="number"
+        android:layout_marginTop="24dp"
+        android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/categorySelections" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonCancel"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Cancel"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSave"
+        app:layout_constraintTop_toTopOf="@+id/buttonSave" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
