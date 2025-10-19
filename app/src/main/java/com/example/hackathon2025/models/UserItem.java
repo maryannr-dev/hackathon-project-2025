@@ -1,55 +1,52 @@
 package com.example.hackathon2025.models;
 
-import com.example.hackathon2025.R;
-
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class UserItem {
+public class UserItem implements Serializable {
     private String email;
-    private String password;
+    // Replaced password with hashedPassword and salt
+    private String hashedPassword;
+    private String salt;
     private Date dateOfBirth;
-
     private Budget budget;
     private List<Badges> badgesList;
 
-
-    public UserItem(String lM, String p, Date dOB) {
-        email = lM;
-        password = p;
-        dateOfBirth = dOB;
-        budget = new Budget();
-        budget.setDefaultCategories();
-        badgesList = new ArrayList<>();
-        badgesList.add(new Badges("Budget Warrior", R.drawable.budget_warrior, 0, 0));
-        badgesList.add(new Badges("Literacy Scholar", R.drawable.literacy_icon,0,0));
-
+    // Updated the constructor
+    public UserItem(String e, String hashedPassword, String salt, Date dOB, Budget b, List<Badges> bL) {
+        this.email = e;
+        this.hashedPassword = hashedPassword;
+        this.salt = salt;
+        this.dateOfBirth = dOB;
+        this.budget = b;
+        this.badgesList = bL;
     }
 
-    public Budget getBudget() {
-        return budget;
+    // Updated getters and setters for password
+    public String getHashedPassword() {
+        return hashedPassword;
     }
 
-    public List<Badges> getBadgesList(){
-        return badgesList;
+    public void setHashedPassword(String hashedPassword) {
+        this.hashedPassword = hashedPassword;
     }
 
-    //getters and setters
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    // --- Other getters and setters are fine ---
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String newLegalName) {
-        this.email = newLegalName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String newPassword) {
-        this.password = newPassword;
+    public void setEmail(String newEmail) {
+        this.email = newEmail;
     }
 
     public Date getDateOfBirth() {
@@ -58,5 +55,21 @@ public class UserItem {
 
     public void setDateOfBirth(Date newDateOfBirth) {
         this.dateOfBirth = newDateOfBirth;
+    }
+
+    public Budget getBudget() {
+        return budget;
+    }
+
+    public void setBudget(Budget budget) {
+        this.budget = budget;
+    }
+
+    public List<Badges> getBadgesList() {
+        return badgesList;
+    }
+
+    public void setBadgesList(List<Badges> badgesList) {
+        this.badgesList = badgesList;
     }
 }
