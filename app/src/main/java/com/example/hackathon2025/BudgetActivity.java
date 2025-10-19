@@ -25,7 +25,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.hackathon2025.models.Badges;
 import com.example.hackathon2025.models.Budget;
+import com.example.hackathon2025.models.BudgetLimitCategory;
 import com.example.hackathon2025.models.Transaction;
 import com.example.hackathon2025.models.UserItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -112,6 +114,13 @@ public class BudgetActivity extends AppCompatActivity {
         adapter = new TransactionAdapter(BudgetActivity.this, R.layout.transaction_item, user.getBudget().getTransactionList());
         transactionListView.setAdapter(adapter);
 
+        Badges budgetBadge = user.getBadgesList().get(0);
+        for(BudgetLimitCategory c : user.getBudget().getCategoryList()){
+            if(c.getAmountSpent() < c.getLimitAmount()){
+                budgetBadge.addXp(25);
+            }
+        }
+
         editCategoryLimits.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -155,6 +164,8 @@ public class BudgetActivity extends AppCompatActivity {
 
                         if(!amount.getText().toString().isEmpty() && !description.getText().toString().isEmpty()){
                             user.getBudget().addTransaction(new Transaction(user.getBudget().getSpecificCategory(categorySelected),Double.parseDouble(amount.getText().toString()), now(),description.getText().toString(),false));
+                            user.getBudget().getSpecificCategory(categorySelected).addToAmountSpent(Integer.parseInt(amount.getText().toString()));
+                            adapter.notifyDataSetChanged();
                             Toast.makeText(BudgetActivity.this,"Successfully added expense transaction",Toast.LENGTH_SHORT).show();
                         }
                         else{
@@ -170,6 +181,7 @@ public class BudgetActivity extends AppCompatActivity {
                     }
                 }).show();
             }
+
 
         });
     }

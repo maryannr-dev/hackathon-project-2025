@@ -1,7 +1,5 @@
 package com.example.hackathon2025.models;
 
-import android.graphics.drawable.Drawable;
-
 import java.io.Serializable;
 
 public class Badges implements Serializable {
@@ -34,7 +32,7 @@ public class Badges implements Serializable {
         return this.badgeIconId;
     }
 
-    public void addxp(int amount)  {
+    public void addXp(int amount)  {
         this.xp = this.xp + amount; 
     }
 
@@ -44,6 +42,17 @@ public class Badges implements Serializable {
 
     public void setLvl(int lvl) {
         this.lvl = lvl;
+    }
+
+    public boolean calculateLvl() {
+        if(this.xp > (lvl+1)*100){
+            while (xp >= 100) {
+                xp -= 100;
+                lvl++;
+            }
+            return true;
+        }
+        return false;
     }
 
     public void setBadgeName(String badgeName) {

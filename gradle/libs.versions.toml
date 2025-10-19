@@ -11,6 +11,7 @@ constraintlayout = "2.2.1"
 viewpager2 = "1.1.0"
 recyclerview = "1.4.0"
 firebaseCrashlyticsBuildtools = "3.0.6"
+firebaseFirestore = "26.0.2"
 
 [libraries]
 drawerlayout = { module = "androidx.drawerlayout:drawerlayout", version.ref = "drawerlayout" }
@@ -24,6 +25,7 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
 recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
